@@ -19,8 +19,17 @@ public class Coordinador {
 	VentanaEstudioBuscar miVentanaEstudioBuscar;
 	
 	
+	public Coordinador() {
+		miVentanaPrincipal = new VentanaPrincipal();
+		miVentanaMedico = new VentanaMedico();
+		miVentanaPaciente = new VentanaPaciente();
+		miVentanaPacienteBuscar = new VentanaPacienteBuscar();
+		miVentanaEstudio = new VentanaEstudio();
+		miVentanaEstudioBuscar = new VentanaEstudioBuscar();
+		
+	}
 	
-
+	
 	public VentanaEstudioBuscar getMiVentanaEstudioBuscar() {
 		return miVentanaEstudioBuscar;
 	}

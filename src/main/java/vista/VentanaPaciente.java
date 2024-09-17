@@ -1,3 +1,8 @@
+/**
+ * @author Marcelo Ruben Anton
+ * @Change: Se agregó el el icono a la ventana y se modificó la vista de la misma para que sea mas comoda
+ */
+
 package vista;
 
 import java.awt.BorderLayout;
@@ -16,6 +21,9 @@ import javax.swing.border.EmptyBorder;
 import controlador.Coordinador;
 import modelo.PacienteDAO;
 import modelo.PacienteVO;
+import net.miginfocom.swing.MigLayout;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 
 public class VentanaPaciente extends JFrame {
@@ -72,6 +80,7 @@ public class VentanaPaciente extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaPaciente() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPaciente.class.getResource("/images/logo.png")));
 		setTitle("Paciente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 546, 566);
@@ -120,114 +129,103 @@ public class VentanaPaciente extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
-		panel_1.setLayout(null);
+		panel_1.setLayout(new MigLayout("", "[][54px][2px][39px][2px][15px][4px][212.00px]", "[30px][30px][30px][30px][30px][30px][30px][30px][30px][30px][30px][30px]"));
 		
 		JLabel lblNewLabel = new JLabel("DNI:");
-		lblNewLabel.setBounds(10, 11, 46, 14);
-		panel_1.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel, "cell 1 0,growx,aligny center");
 		
 		txtDni = new JTextField();
-		txtDni.setBounds(66, 8, 86, 20);
-		panel_1.add(txtDni);
+		txtDni.setToolTipText("Ingresa en DNI sin puntos");
+		panel_1.add(txtDni, "cell 7 0,grow");
 		txtDni.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Apellido:");
-		lblNewLabel_1.setBounds(10, 51, 46, 14);
-		panel_1.add(lblNewLabel_1);
+		lblNewLabel_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_1, "cell 1 1,alignx left,aligny center");
 		
 		txtApe = new JTextField();
-		txtApe.setBounds(66, 48, 86, 20);
-		panel_1.add(txtApe);
+		panel_1.add(txtApe, "cell 7 1,grow");
 		txtApe.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre:");
-		lblNewLabel_2.setBounds(10, 99, 46, 14);
-		panel_1.add(lblNewLabel_2);
+		lblNewLabel_2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_2, "cell 1 2,alignx left,aligny center");
 		
 		txtNom = new JTextField();
-		txtNom.setBounds(66, 96, 86, 20);
-		panel_1.add(txtNom);
+		panel_1.add(txtNom, "cell 7 2,grow");
 		txtNom.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Sexo:");
-		lblNewLabel_3.setBounds(10, 141, 46, 14);
-		panel_1.add(lblNewLabel_3);
+		lblNewLabel_3.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_3, "cell 1 3,growx,aligny center");
 		
 		txtSex = new JTextField();
-		txtSex.setBounds(66, 138, 86, 20);
-		panel_1.add(txtSex);
+		panel_1.add(txtSex, "cell 7 3,grow");
 		txtSex.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Fecha de Nacimiento:");
-		lblNewLabel_4.setBounds(10, 182, 112, 14);
-		panel_1.add(lblNewLabel_4);
+		lblNewLabel_4.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_4, "cell 1 4,growx,aligny center");
 		
 		txtFNac = new JTextField();
-		txtFNac.setBounds(126, 179, 86, 20);
-		panel_1.add(txtFNac);
+		panel_1.add(txtFNac, "cell 7 4,grow");
 		txtFNac.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Domicilio:");
-		lblNewLabel_5.setBounds(10, 228, 46, 14);
-		panel_1.add(lblNewLabel_5);
+		lblNewLabel_5.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_5, "cell 1 5,alignx left,aligny bottom");
 		
 		txtDom = new JTextField();
-		txtDom.setBounds(66, 222, 86, 20);
-		panel_1.add(txtDom);
+		panel_1.add(txtDom, "cell 7 5,grow");
 		txtDom.setColumns(10);
 		
 		JLabel lblNewLabel_6 = new JLabel("Localidad:");
-		lblNewLabel_6.setBounds(10, 264, 54, 14);
-		panel_1.add(lblNewLabel_6);
+		lblNewLabel_6.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_6, "cell 1 6,growx,aligny center");
 		
 		txtLoc = new JTextField();
-		txtLoc.setBounds(66, 261, 86, 20);
-		panel_1.add(txtLoc);
+		panel_1.add(txtLoc, "cell 7 6,grow");
 		txtLoc.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("Peso:");
-		lblNewLabel_7.setBounds(10, 298, 46, 14);
-		panel_1.add(lblNewLabel_7);
+		lblNewLabel_7.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_7, "cell 1 7,growx,aligny center");
 		
 		txtPeso = new JTextField();
-		txtPeso.setBounds(66, 295, 86, 20);
-		panel_1.add(txtPeso);
+		panel_1.add(txtPeso, "cell 7 7,grow");
 		txtPeso.setColumns(10);
 		
 		JLabel lblNewLabel_8 = new JLabel("Altura:");
-		lblNewLabel_8.setBounds(10, 337, 46, 14);
-		panel_1.add(lblNewLabel_8);
+		lblNewLabel_8.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_8, "cell 1 8,growx,aligny center");
 		
 		txtAlt = new JTextField();
-		txtAlt.setBounds(66, 334, 86, 20);
-		panel_1.add(txtAlt);
+		panel_1.add(txtAlt, "cell 7 8,grow");
 		txtAlt.setColumns(10);
 		
 		JLabel lblNewLabel_9 = new JLabel("Grupo:");
-		lblNewLabel_9.setBounds(10, 365, 46, 14);
-		panel_1.add(lblNewLabel_9);
+		lblNewLabel_9.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_9, "cell 1 9,growx,aligny center");
 		
 		txtGrup = new JTextField();
-		txtGrup.setBounds(66, 362, 86, 20);
-		panel_1.add(txtGrup);
+		panel_1.add(txtGrup, "cell 7 9,grow");
 		txtGrup.setColumns(10);
 		
 		JLabel lblNewLabel_10 = new JLabel("Factor:");
-		lblNewLabel_10.setBounds(10, 400, 46, 14);
-		panel_1.add(lblNewLabel_10);
+		lblNewLabel_10.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_10, "cell 1 10,growx,aligny bottom");
 		
 		txtFac = new JTextField();
-		txtFac.setBounds(66, 393, 86, 20);
-		panel_1.add(txtFac);
+		panel_1.add(txtFac, "cell 7 10,grow");
 		txtFac.setColumns(10);
 		
 		JLabel lblNewLabel_11 = new JLabel("N° Historial Clinico:");
-		lblNewLabel_11.setBounds(10, 442, 95, 14);
-		panel_1.add(lblNewLabel_11);
+		lblNewLabel_11.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		panel_1.add(lblNewLabel_11, "cell 1 11,growx,aligny center");
 		
 		txtNroHC = new JTextField();
-		txtNroHC.setBounds(107, 439, 86, 20);
-		panel_1.add(txtNroHC);
+		panel_1.add(txtNroHC, "cell 7 11,grow");
 		txtNroHC.setColumns(10);
 		
 		limpiar();
@@ -291,7 +289,6 @@ public class VentanaPaciente extends JFrame {
 	}
 	
 	public void limpiar() {
-		txtDni.setText("");
 		txtApe.setText("");
 		txtNom.setText("");
 		txtSex.setText("");
